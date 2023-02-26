@@ -4,6 +4,8 @@ const bodyParser = require('body-parser');
 const app = express()
 const path = require('path')
 const port = 3000
+const ejs = require('ejs')
+app.set('view engine', 'ejs')
 app.use(express.static('public'))
 app.use(bodyParser.urlencoded({ extended: true }));
 // app.post('/login', (req, res) => {
@@ -19,11 +21,10 @@ app.post('/', function (req, res) {
 app.post('/Addcart', (req, res) => {
     console.log("Order");
     res.redirect('/')
-
 })
-app.get('/', (req, res) => {
-    res.sendFile(__dirname, "/public/index.ejs")
-});
+// app.get('/', (req, res) => {
+//     res.sendFile(__dirname, "/public/index.ejs")
+// });
 app.listen(port, () => {
     console.log("listening");
 })
