@@ -1,3 +1,4 @@
+let alert = require('alert');
 const express = require('express')
 const bodyParser = require('body-parser');
 const app = express()
@@ -15,12 +16,13 @@ app.post('/', function (req, res) {
     console.log(value);
     res.send("Order Your Food For ? : $" + value)
 })
-// app.post('/Addcart', (req, res) => {
-//     console.log("Order");
-//     res.redirect('/')
-// })
+app.post('/Addcart', (req, res) => {
+    console.log("Order");
+    res.redirect('/')
+
+})
 app.get('/', (req, res) => {
-    res.sendFile(__dirname, "/public/index.html")
+    res.sendFile(__dirname, "/public/index.ejs")
 });
 app.listen(port, () => {
     console.log("listening");

@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Food Delivery App</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="#menu">Menu</a></li>
+                <li><a href="#ordering">Ordering</a></li>
+                <li><a href="#tracking">Tracking</a></li>
+                <li><a href="#account">Account</a></li>
+            </ul>
+            <button>Download App</button>
+        </nav>
+    </header>
+    <hr class="solid">
+    <main>
+        <section id="hero">
+            <h1>Get your food delivered in minutes</h1>
+            <p>Order from our wide selection of restaurants and cuisines.</p>
+        </section>
+
+        <section id="menu">
+            <h2>Our Menu</h2>
+            <ul>
+                <li>
+                    <img src="img/pizza.jpg" alt="Pizza">
+                    <h3>Pizza</h3>
+                    <p>Our classic pizza topped with tomato sauce, cheese, and pepperoni.</p>
+                    <label for="Name">Quantity:</label>
+                    <form action='/' class="form" method="post" autocomplete="off">
+                        <input type="number" id="Name" name="Quantity" placeholder="Enter the Quantity" required>
+                        <button id="FindCost" type="submit">Find Cost</button>
+                    </form>
+                    <form action='Addcart' method="post">
+                        <button id="Cart1" onclick="Ordered()">Order Now</button>
+                    </form>
+                    <h1>Price:<%= Price%>
+                    </h1>
+                </li>
+                <li>
+                    <img src="img/sushi.jpg" alt="Sushi">
+                    <h3>Sushi</h3>
+                    <p>Fresh and delicious sushi rolls, made with the finest ingredients.</p>
+                    <label for="Name">Quantity:</label>
+                    <form action='/' class="form" method="post" autocomplete="off">
+                        <input type="number" id="Name" name="Quantity" placeholder="Enter the Quantity " required>
+                        <button id="FindCost" type="submit">Find Cost</button>
+                    </form>
+                    <form action='Addcart' method="post">
+                        <button id="Cart1" onclick="Ordered()">Order Now</button>
+                    </form>
+                    <h1>Price: 25$</h1>
+                </li>
+            </ul>
+        </section>
+
+        <section id="ordering">
+            <h2>How to Order ?</h2>
+            <ol>
+                <li>Choose the Quantity from menu items</li>
+                <li>Enter your delivery address and any special instructions</li>
+                <li>Submit your order</li>
+            </ol>
+        </section>
+
+        <section id="account">
+            <h2>My Account</h2>
+            <form action="login" method="post">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password">
+                <button>Login</button>
+            </form>
+        </section>
+    </main>
+
+    <footer>
+        <p>Copyright &copy; 2023 Food Delivery App</p>
+    </footer>
+    <script src="app.js"></script>
+</body>
+
+</html>
